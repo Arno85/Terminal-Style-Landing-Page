@@ -17,7 +17,7 @@ const createBox = (title, content, topLeftBuffer) => {
             this.setBackground('#00aa00');
         },
         onblur: function() {
-            this.setBackground('#777');
+            this.setBackground('#555');
         },
     })
 };
