@@ -3,15 +3,17 @@ const aboutContent = document.querySelector('#about-content');
 const contact = document.querySelector('#contact');
 const contactContent = document.querySelector('#contact-content');
 
-const createBox = (title, content, topLeftBuffer) => {
+const createBox = (title, content, positionX, positionY) => {
     return new WinBox({
         title: title,
-        width: '400px',
-        height: '400px',
-        top: topLeftBuffer,
+        width: '500px',
+        height: '500px',
+        x: positionX,
+        y: positionY,
+        top: 50,
         right: 50,
         bottom: 50,
-        left: topLeftBuffer,
+        left: 50,
         mount: content,
         onfocus: function() {
             this.setBackground('#00aa00');
@@ -23,9 +25,9 @@ const createBox = (title, content, topLeftBuffer) => {
 };
 
 about.addEventListener('click', () => {
-    createBox('About Me', aboutContent, 50);
+    createBox('About Me', aboutContent, 0, 0);
 });
 
 contact.addEventListener('click', () => {
-    createBox('Contact Me', contactContent, 150);
+    createBox('Contact Me', contactContent, window.innerWidth - 550, window.innerHeight - 550);
 });
